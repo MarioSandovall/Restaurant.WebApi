@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Domain.Entities
 {
-    public class BranchOffice : IEntity
+    public class BranchOfficeEf : IEntity
     {
         public int Id { get; set; }
 
@@ -35,6 +35,6 @@ namespace Domain.Entities
         public bool Active { get; set; } = true;
 
         public int RestaurantId { get; set; }
-        public Restaurant Restaurant { get; set; }
+        public RestaurantEf Restaurant { get; set; }
     }
 }

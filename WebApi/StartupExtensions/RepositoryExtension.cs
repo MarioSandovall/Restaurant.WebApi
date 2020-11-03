@@ -1,4 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
+using Repository.Interfaces;
+using Repository.Repositories;
 
 namespace WebApi.StartupExtensions
 {
@@ -6,8 +8,8 @@ namespace WebApi.StartupExtensions
     {
         public static IServiceCollection AddRepositories(this IServiceCollection services)
         {
+            services.AddTransient<IUserLoginRepository, UserLoginRepository>();
 
-         
             return services;
         }
     }

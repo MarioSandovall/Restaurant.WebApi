@@ -1,21 +1,21 @@
 ﻿using Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 
-namespace Data.Configuration
+namespace Data.Configurations
 {
     internal static class UserRoleConfiguration
     {
         public static void Configurate(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<UserRole>()
+            modelBuilder.Entity<UserRoleEf>()
                 .HasKey(ur => new { ur.UserId, ur.RoleId });
 
-            modelBuilder.Entity<UserRole>()
+            modelBuilder.Entity<UserRoleEf>()
                 .HasOne(u => u.User)
                 .WithMany(ur => ur.UserRoles)
                 .HasForeignKey(u => u.UserId);
 
-            modelBuilder.Entity<UserRole>()
+            modelBuilder.Entity<UserRoleEf>()
                 .HasOne(r => r.Role)
                 .WithMany(ur => ur.UserRoles)
                 .HasForeignKey(r => r.RoleId);

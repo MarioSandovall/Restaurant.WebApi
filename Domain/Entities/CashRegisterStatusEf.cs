@@ -1,10 +1,9 @@
 ﻿using Domain.Interfaces;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace Domain.Entities
 {
-    public class Role : IEntity
+    public class CashRegisterStatusEf : IEntity
     {
         public int Id { get; set; }
 
@@ -14,7 +13,5 @@ namespace Domain.Entities
 
         [StringLength(500)]
         public string Description { get; set; }
-        
-        public ICollection<UserRole> UserRoles { get; set; }
     }
 }

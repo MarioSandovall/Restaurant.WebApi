@@ -1,8 +1,10 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Domain.Interfaces;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace Domain.Entities
 {
-    public class OrderStatus
+    public class RoleEf : IEntity
     {
         public int Id { get; set; }
 
@@ -12,5 +14,7 @@ namespace Domain.Entities
 
         [StringLength(500)]
         public string Description { get; set; }
+        
+        public ICollection<UserRoleEf> UserRoles { get; set; }
     }
 }

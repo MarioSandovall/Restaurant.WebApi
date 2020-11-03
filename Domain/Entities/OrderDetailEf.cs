@@ -2,7 +2,7 @@
 
 namespace Domain.Entities
 {
-    public class OrderDetail : IEntity
+    public class OrderDetailEf : IEntity
     {
         public int Id { get; set; }
 
@@ -11,9 +11,9 @@ namespace Domain.Entities
         public decimal Price { get; set; }
 
         public int ProductId { get; set; }
-        public Product Product { get; set; }
+        public ProductEf Product { get; set; }
 
         public int OrderId { get; set; }
-        public Order Order { get; set; }
+        public OrderEf Order { get; set; }
     }
 }

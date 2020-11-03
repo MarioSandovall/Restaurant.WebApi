@@ -1,4 +1,4 @@
-﻿using Data.Configuration;
+﻿using Data.Configurations;
 using Data.Seeders;
 using Domain.Entities;
 using Microsoft.EntityFrameworkCore;
@@ -9,24 +9,25 @@ namespace Data
     {
         public RestaurantContext(DbContextOptions options) : base(options)
         {
+
         }
 
-        public DbSet<User> User { get; set; }
-        public DbSet<Role> Role { get; set; }
-        public DbSet<Order> Order { get; set; }
-        public DbSet<Table> Table { get; set; }
-        public DbSet<Product> Product { get; set; }
-        public DbSet<UserRole> UserRole { get; set; }
-        public DbSet<Ingredient> Ingredient { get; set; }
-        public DbSet<OrderDetail> OrderDetail { get; set; }
-        public DbSet<OrderStatus> OrderStatus { get; set; }
-        public DbSet<PaymentType> PaymentType { get; set; }
-        public DbSet<BranchOffice> BranchOffice { get; set; }
-        public DbSet<CashRegister> CashRegister { get; set; }
-        public DbSet<Restaurant> Restaurant { get; set; }
-        public DbSet<ProductCategory> ProductCategory { get; set; }
-        public DbSet<ProductIngredient> ProductIngredient { get; set; }
-        public DbSet<CashRegisterStatus> CashRegisterStatus { get; set; }
+        public DbSet<UserEf> User { get; set; }
+        public DbSet<RoleEf> Role { get; set; }
+        public DbSet<OrderEf> Order { get; set; }
+        public DbSet<TableEf> Table { get; set; }
+        public DbSet<ProductEf> Product { get; set; }
+        public DbSet<UserRoleEf> UserRole { get; set; }
+        public DbSet<IngredientEf> Ingredient { get; set; }
+        public DbSet<OrderDetailEf> OrderDetail { get; set; }
+        public DbSet<OrderStatusEf> OrderStatus { get; set; }
+        public DbSet<PaymentTypeEf> PaymentType { get; set; }
+        public DbSet<BranchOfficeEf> BranchOffice { get; set; }
+        public DbSet<CashRegisterEf> CashRegister { get; set; }
+        public DbSet<RestaurantEf> Restaurant { get; set; }
+        public DbSet<ProductCategoryEf> ProductCategory { get; set; }
+        public DbSet<ProductIngredientEf> ProductIngredient { get; set; }
+        public DbSet<CashRegisterStatusEf> CashRegisterStatus { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

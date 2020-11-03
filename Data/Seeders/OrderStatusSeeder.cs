@@ -12,14 +12,14 @@ namespace Data.Seeders
             _modelBuilder = modelBuilder;
 
             AddPaymentType((int)OrderStatusEnum.Pending, "Pending");
-            AddPaymentType((int)OrderStatusEnum.Delivered, "delivered");
+            AddPaymentType((int)OrderStatusEnum.Delivered, "Delivered");
             AddPaymentType((int)OrderStatusEnum.Cancel, "Cancelled");
         }
 
         private static void AddPaymentType(int id, string name)
         {
-            _modelBuilder.Entity<OrderStatus>().HasData(
-                new OrderStatus { Id = id, Name = name });
+            _modelBuilder.Entity<OrderStatusEf>().HasData(
+                new OrderStatusEf { Id = id, Name = name });
         }
     }
 }
