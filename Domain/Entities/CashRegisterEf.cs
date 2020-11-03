@@ -4,7 +4,7 @@ using System;
 
 namespace Domain.Entities
 {
-    public class CashRegister : IEntity
+    public class CashRegisterEf : IEntity
     {
         public int Id { get; set; }
 
@@ -17,9 +17,9 @@ namespace Domain.Entities
         public CashRegisterStatusEnum Status { get; set; }
 
         public int UserId { get; set; }
-        public User User { get; set; }
+        public UserEf User { get; set; }
 
         public int BranchOfficeId { get; set; }
-        public BranchOffice BranchOffice { get; set; }
+        public BranchOfficeEf BranchOffice { get; set; }
     }
 }

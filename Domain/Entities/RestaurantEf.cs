@@ -2,7 +2,7 @@
 
 namespace Domain.Entities
 {
-    public class Restaurant
+    public class RestaurantEf
     {
         public int Id { get; set; }
 

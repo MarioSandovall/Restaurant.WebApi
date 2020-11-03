@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Domain.Entities
 {
-    public class ProductCategory : IEntity
+    public class PaymentTypeEf : IEntity
     {
         public int Id { get; set; }
 
@@ -13,14 +13,5 @@ namespace Domain.Entities
 
         [StringLength(500)]
         public string Description { get; set; }
-
-        public bool Active { get; set; } = true;
-
-        [StringLength(500)]
-        public string ImagePath { get; set; }
-
-        public int RestaurantId { get; set; }
-        public Restaurant Restaurant { get; set; }
-
     }
 }

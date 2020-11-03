@@ -1,9 +1,8 @@
-﻿using Domain.Interfaces;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace Domain.Entities
 {
-    public class PaymentType : IEntity
+    public class OrderStatusEf
     {
         public int Id { get; set; }
 

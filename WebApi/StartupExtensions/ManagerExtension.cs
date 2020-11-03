@@ -1,4 +1,6 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using Business.Interfaces;
+using Business.Managers;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace WebApi.StartupExtensions
 {
@@ -6,6 +8,8 @@ namespace WebApi.StartupExtensions
     {
         public static IServiceCollection AddManagers(this IServiceCollection services)
         {
+            services.AddTransient<IUserLoginManager, UserLoginManager>();
+
 
             return services;
         }

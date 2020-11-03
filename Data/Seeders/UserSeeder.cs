@@ -13,19 +13,19 @@ namespace Data.Seeders
 
             var users = new[]
             {
-                new User {Id = 1, Name = "Mario Sandoval", Password = "Admin", Email="mario_sandovall@outlook.com"}
+                new UserEf {Id = 1, Name = "Mario Sandoval", Password = "Admin", Email="mario_sandovall@outlook.com"}
             };
 
             var roles = new[]
             {
-                new Role {Id = (int)RoleEnum.Cashier, Name ="Cashier"},
-                new Role {Id = (int)RoleEnum.Chef,  Name = "Chef"},
-                new Role {Id = (int)RoleEnum.Admin,  Name = "Administrador"}
+                new RoleEf {Id = (int)RoleEnum.Cashier, Name ="Cashier"},
+                new RoleEf {Id = (int)RoleEnum.Chef,  Name = "Chef"},
+                new RoleEf {Id = (int)RoleEnum.Admin,  Name = "Administrador"}
             };
 
             var userRoles = new[]
             {
-                new UserRole {UserId = 1, RoleId = (int) RoleEnum.Admin}
+                new UserRoleEf {UserId = 1, RoleId = (int) RoleEnum.Admin}
             };
 
             foreach (var user in users)
@@ -47,7 +47,7 @@ namespace Data.Seeders
 
         private static void AddUser(int id, string name, string email, string password)
         {
-            _modelBuilder.Entity<User>().HasData(new User
+            _modelBuilder.Entity<UserEf>().HasData(new UserEf
             {
                 Id = id,
                 Name = name,
@@ -58,7 +58,7 @@ namespace Data.Seeders
 
         private static void AddRole(int id, string name)
         {
-            _modelBuilder.Entity<Role>().HasData(new Role()
+            _modelBuilder.Entity<RoleEf>().HasData(new RoleEf()
             {
                 Id = id,
                 Name = name,
@@ -68,7 +68,7 @@ namespace Data.Seeders
 
         private static void AddUserRole(int userId, int roleId)
         {
-            _modelBuilder.Entity<UserRole>().HasData(new UserRole()
+            _modelBuilder.Entity<UserRoleEf>().HasData(new UserRoleEf()
             {
                 UserId = userId,
                 RoleId = roleId

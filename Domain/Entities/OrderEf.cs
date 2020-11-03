@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Domain.Entities
 {
-    public class Order : IEntity
+    public class OrderEf : IEntity
     {
         public int Id { get; set; }
 
@@ -18,10 +18,10 @@ namespace Domain.Entities
         public OrderStatusEnum Status { get; set; }
 
         public int CashRegisterId { get; set; }
-        public CashRegister CashRegister { get; set; }
+        public CashRegisterEf CashRegister { get; set; }
 
         public int? CashierId { get; set; }
-        public User Cashier { get; set; }
+        public UserEf Cashier { get; set; }
 
         public PaymentTypeEnum PaymentType { get; set; }
 
