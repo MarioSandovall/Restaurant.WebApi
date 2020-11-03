@@ -26,7 +26,7 @@ namespace Domain.Entities
         [StringLength(25)]
         public string Password { get; set; }
 
-        public bool Active { get; set; }
+        public bool Active { get; set; } = true;
 
         public ICollection<UserRole> UserRoles { get; set; }
 

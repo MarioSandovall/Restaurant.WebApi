@@ -21,7 +21,7 @@ namespace Domain.Entities
         [Required]
         public decimal Price { get; set; }
 
-        public bool Active { get; set; }
+        public bool Active { get; set; } = true;
 
         public int RestaurantId { get; set; }
         public Restaurant Restaurant { get; set; }

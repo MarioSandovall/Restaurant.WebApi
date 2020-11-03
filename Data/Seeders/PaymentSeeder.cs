@@ -20,7 +20,7 @@ namespace Data.Seeders
         private static void AddPaymentType(int id, string name)
         {
             _modelBuilder.Entity<PaymentType>().HasData(
-                new PaymentType() { Id = id, Name = name });
+                new PaymentType { Id = id, Name = name });
         }
     }
 }

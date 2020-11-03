@@ -19,7 +19,7 @@ namespace Domain.Entities
         [StringLength(500)]
         public string ImagePath { get; set; }
 
-        public bool Active { get; set; }
+        public bool Active { get; set; } = true;
 
         public int BranchOfficeId { get; set; }
         public BranchOffice BranchOffice { get; set; }

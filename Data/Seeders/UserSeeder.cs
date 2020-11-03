@@ -13,24 +13,24 @@ namespace Data.Seeders
 
             var users = new[]
             {
-                new User() {Id = 1, Name = "Administrador", Password = "Admin"}
+                new User {Id = 1, Name = "Mario Sandoval", Password = "Admin", Email="mario_sandovall@outlook.com"}
             };
 
             var roles = new[]
             {
-                new Role() {Id = (int)RoleEnum.Cashier, Name ="Cashier"},
-                new Role() {Id = (int)RoleEnum.Chef,  Name = "Chef"},
-                new Role() {Id = (int)RoleEnum.Admin,  Name = "Administrador"}
+                new Role {Id = (int)RoleEnum.Cashier, Name ="Cashier"},
+                new Role {Id = (int)RoleEnum.Chef,  Name = "Chef"},
+                new Role {Id = (int)RoleEnum.Admin,  Name = "Administrador"}
             };
 
             var userRoles = new[]
             {
-                new UserRole() {UserId = 1, RoleId = (int) RoleEnum.Admin}
+                new UserRole {UserId = 1, RoleId = (int) RoleEnum.Admin}
             };
 
             foreach (var user in users)
             {
-                AddUser(user.Id, user.Name, user.Password);
+                AddUser(user.Id, user.Name, user.Email, user.Password);
             }
 
             foreach (var role in roles)
@@ -45,14 +45,14 @@ namespace Data.Seeders
 
         }
 
-        private static void AddUser(int id, string name, string password)
+        private static void AddUser(int id, string name, string email, string password)
         {
-            _modelBuilder.Entity<User>().HasData(new User()
+            _modelBuilder.Entity<User>().HasData(new User
             {
                 Id = id,
                 Name = name,
-                Password = password,
-                Active = true
+                Email = email,
+                Password = password
             });
         }
 
