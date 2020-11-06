@@ -5,7 +5,7 @@ namespace Data.Configurations
 {
     internal static class ProductIngredientConfiguration
     {
-        public static void Configurate(ModelBuilder modelBuilder)
+        public static void Configure(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<ProductIngredientEf>()
                 .HasKey(pi => new { pi.ProductId, pi.IngredientId });

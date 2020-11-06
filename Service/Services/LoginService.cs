@@ -45,7 +45,7 @@ namespace Service.Services
             return tokenHandler.WriteToken(token);
         }
 
-        private void AddRoles(UserLogin user, ref List<Claim> claims)
+        private static void AddRoles(UserLogin user, ref List<Claim> claims)
         {
             if (user.RoleIds != null)
             {

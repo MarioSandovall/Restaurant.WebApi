@@ -5,7 +5,7 @@ namespace Data.Configurations
 {
     internal static class UserRoleConfiguration
     {
-        public static void Configurate(ModelBuilder modelBuilder)
+        public static void Configure(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<UserRoleEf>()
                 .HasKey(ur => new { ur.UserId, ur.RoleId });
