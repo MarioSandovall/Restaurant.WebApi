@@ -17,7 +17,7 @@ namespace Business.AutoMapper
             var instance = model ?? new UserAccount();
 
             instance.Email = entity.Email;
-            instance.FullName = $"{ entity.Name} {entity.LastName}";
+            instance.FullName = $"{entity.Name} {entity.LastName}";
             instance.Image = entity.ImagePath.ToImage();
 
             return instance;

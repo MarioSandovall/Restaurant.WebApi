@@ -38,9 +38,9 @@ namespace Data
             OrderStatusSeeder.Seed(modelBuilder);
 
             //Configurations
-            DecimalConfiguration.Configurate(modelBuilder);
-            UserRoleConfiguration.Configurate(modelBuilder);
-            ProductIngredientConfiguration.Configurate(modelBuilder);
+            DecimalConfiguration.Configure(modelBuilder);
+            UserRoleConfiguration.Configure(modelBuilder);
+            ProductIngredientConfiguration.Configure(modelBuilder);
 
             base.OnModelCreating(modelBuilder);
         }

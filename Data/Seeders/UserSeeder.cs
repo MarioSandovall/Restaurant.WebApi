@@ -20,7 +20,7 @@ namespace Data.Seeders
             {
                 new RoleEf {Id = (int)RoleEnum.Cashier, Name ="Cashier"},
                 new RoleEf {Id = (int)RoleEnum.Chef,  Name = "Chef"},
-                new RoleEf {Id = (int)RoleEnum.Admin,  Name = "Administrador"}
+                new RoleEf {Id = (int)RoleEnum.Admin,  Name = "Administrator"}
             };
 
             var userRoles = new[]
