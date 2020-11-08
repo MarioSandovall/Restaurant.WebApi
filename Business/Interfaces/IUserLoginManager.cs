@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 
 namespace Business.Interfaces
 {
-    public interface IUserLoginManager
+    public interface IAccountManager
     {
         Task<bool> ExistsAsync(string email);
 

@@ -1,6 +1,7 @@
 ﻿using Business.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Model.Models.Login;
 using System.Threading.Tasks;
 
 namespace WebApi.Controllers
@@ -9,24 +10,32 @@ namespace WebApi.Controllers
     [ApiController]
     public class LoginController : ControllerBase
     {
-        private readonly IUserLoginManager _manager;
+        private readonly ILoginManager _manager;
         public LoginController(
-            IUserLoginManager manager)
+            ILoginManager manager)
         {
             _manager = manager;
         }
 
         [AllowAnonymous]
-        [HttpGet("{email}")]
-        public async Task<IActionResult> GetAccount([FromRoute] string email)
+        [HttpPost("user")]
+        public async Task<IActionResult> Exists([FromBody] AuthenticateModel model)
         {
-            if (!await _manager.ExistsAsync(email))
+            var exists = await _manager.ExistsAsync(model.Email, model.Password);
+            return Ok(exists);
+        }
+
+        [HttpPost]
+        [AllowAnonymous]
+        public async Task<IActionResult> GetLoginUser([FromBody] AuthenticateModel model)
+        {
+            if (!await _manager.ExistsAsync(model.Email, model.Password))
             {
-                return NotFound("Email not found");
+                return NotFound("user not found");
             }
 
-            var account = await _manager.GetAccountAsync(email);
-            return Ok(account);
+            var loggedUser = await _manager.GetUserAsync(model.Email, model.Password);
+            return Ok(loggedUser);
         }
     }
 }

@@ -8,8 +8,9 @@ namespace WebApi.StartupExtensions
     {
         public static IServiceCollection AddManagers(this IServiceCollection services)
         {
-            services.AddTransient<IUserLoginManager, UserLoginManager>();
 
+            services.AddTransient<ILoginManager, LoginManager>();
+            services.AddTransient<IAccountManager, AccountManager>();
 
             return services;
         }
