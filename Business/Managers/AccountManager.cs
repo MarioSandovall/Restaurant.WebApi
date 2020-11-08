@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace Business.Managers
 {
-    public class UserLoginManager : IUserLoginManager
+    public class AccountManager : IAccountManager
     {
         private readonly IMapper _mapper;
-        private readonly IUserLoginRepository _repository;
-        public UserLoginManager(
+        private readonly IAccountRepository _repository;
+        public AccountManager(
             IMapper mapper,
-            IUserLoginRepository repository)
+            IAccountRepository repository)
         {
             _mapper = mapper;
             _repository = repository;

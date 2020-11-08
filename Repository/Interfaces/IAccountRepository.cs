@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 
 namespace Repository.Interfaces
 {
-    public interface IUserLoginRepository
+    public interface IAccountRepository
     {
         Task<bool> ExistsAsync(string email);
 

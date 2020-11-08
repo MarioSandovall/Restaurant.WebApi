@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace Repository.Repositories
 {
-    public class UserLoginRepository : IUserLoginRepository
+    public class AccountRepository : IAccountRepository
     {
         private readonly RestaurantContext _ctx;
-        public UserLoginRepository(RestaurantContext ctx) => _ctx = ctx;
+        public AccountRepository(RestaurantContext ctx) => _ctx = ctx;
 
         public async Task<bool> ExistsAsync(string email)
         {

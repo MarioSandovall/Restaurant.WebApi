@@ -6,7 +6,13 @@ namespace Model.Models.Login
     {
         public int Id { get; set; }
 
-        public string Name { get; set; }
+        public string Email { get; set; }
+
+        public string FullName { get; set; }
+
+        public byte[] Image { get; set; }
+
+        public string Token { get; set; }
 
         public IEnumerable<int> RoleIds { get; set; }
 

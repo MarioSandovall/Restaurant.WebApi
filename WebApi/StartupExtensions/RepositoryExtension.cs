@@ -8,7 +8,9 @@ namespace WebApi.StartupExtensions
     {
         public static IServiceCollection AddRepositories(this IServiceCollection services)
         {
-            services.AddTransient<IUserLoginRepository, UserLoginRepository>();
+
+            services.AddTransient<ILoginRepository, LoginRepository>();
+            services.AddTransient<IAccountRepository, AccountRepository>();
 
             return services;
         }
