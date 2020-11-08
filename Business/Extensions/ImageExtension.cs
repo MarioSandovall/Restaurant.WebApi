@@ -40,10 +40,10 @@ namespace Business.Extensions
             return !File.Exists(file) ? null : File.ReadAllBytes(file);
         }
 
-        private static Tuple<string, string> GetPath(ImageTypes ImageType)
+        private static Tuple<string, string> GetPath(ImageTypes imageType)
         {
             var folder = string.Empty;
-            switch (ImageType)
+            switch (imageType)
             {
                 case ImageTypes.User:
                     folder = @"Resources\\Users";
