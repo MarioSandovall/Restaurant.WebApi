@@ -18,9 +18,10 @@ namespace Business.AutoMapper
             var instance = model ?? new UserLogin();
 
             instance.Id = entity.Id;
+            instance.Name = entity.Name;
             instance.Email = entity.Email;
+            instance.LastName = entity.LastName;
             instance.Image = entity.ImagePath.ToImage();
-            instance.FullName = $"{ entity.Name} {entity.LastName}";
             instance.RoleIds = entity?.UserRoles.Select(x => x.RoleId).ToList();
 
             return instance;
